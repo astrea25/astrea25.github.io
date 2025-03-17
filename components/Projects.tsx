@@ -1,7 +1,10 @@
 "use client"
 import Image from "next/image"
+import { useState } from "react"
 
 const Projects = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
   const projects = [
     {
       title: "Schedule Maker",
@@ -21,6 +24,12 @@ const Projects = () => {
       image: "/hobbysite.png",
       githubLink: "https://github.com/astrea25/Hobbysite",
     },
+    {
+      title: "Study Assistant",
+      description: "A modern web application built with Vue.js that leverages AI-powered tools to enhance studying efficiency. Features include PDF management for uploading and processing study materials, AI-generated flashcards with spaced repetition learning, smart note-taking with automatic summarization, and customizable test generation with multiple question types and automatic grading.",
+      image: "/study-assistant.png",
+      githubLink: "https://github.com/astrea25/Study-Assistant"
+    }
   ];
 
   return (
@@ -31,7 +40,10 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="relative h-48 cursor-pointer overflow-hidden">
+                <div 
+                  className="relative h-48 cursor-pointer overflow-hidden"
+                  onClick={() => setSelectedImage(project.image)}
+                >
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
@@ -61,6 +73,29 @@ const Projects = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative w-[90vw] h-[90vh]">
+            <Image
+              src={selectedImage}
+              alt="Expanded view"
+              fill
+              className="object-contain"
+            />
+            <button
+              className="absolute top-4 right-4 text-white text-2xl bg-black bg-opacity-50 w-10 h-10 rounded-full"
+              onClick={() => setSelectedImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </>
   )
 }
