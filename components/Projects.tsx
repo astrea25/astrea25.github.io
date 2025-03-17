@@ -6,13 +6,13 @@ const Projects = () => {
     {
       title: "Schedule Maker",
       description: "Taking inspiration from the arduous tasks in enlistment period, the website helps in planning out the schedule to enlist for. It will display all the classes listed in the Ateneo Integrated Student Information System (AISIS) portal where the user can select their classes and display these planned schedule in an organized time table. This was created using a combination of Boot Strap, and Vue.",
-      image: "/seam-carve.png",
+      image: "/schedule-maker.png",
       githubLink: "https://github.com/astrea25/Schedule-Maker",
     },
     {
       title: "Seam Carver",
       description: "Similar with a commonly used photoshop feature, the program will help in resizing an image using the seam carving algorithm. It functions by establishing a number of seams (paths of least importance) in an image and automatically removes seams to reduce image size or inserts seams to extend it. This was created using Python",
-      image: "/schedule-maker.png",
+      image: "/seam-carve.png",
       githubLink: "https://github.com/astrea25/Seam-Carving",
     },
     {
