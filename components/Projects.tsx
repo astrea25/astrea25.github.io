@@ -36,6 +36,12 @@ const Projects = () => {
       description: "This is a modern, efficient, and intuitive task management application designed to help users stay organized and productive. Built with React and Vite, it offers a seamless experience for managing tasks, setting priorities, and tracking progress.",
       image: "/task-management.png",
       link: "https://task-management-seven-sable.vercel.app/"
+    },
+    {
+      title: "D Maximum Fitness Gym Website",
+      description: "A modern we application built with React Vite that leverages Firebase for authentication and database.",
+      image: "/dmax.jpeg",
+      link: "https://dmaxgym.vercel.app/"
     }
   ];
 
